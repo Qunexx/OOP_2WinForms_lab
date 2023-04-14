@@ -42,19 +42,24 @@ namespace _2lab
 
                 for (int i = 0; i < m; i++)
                 {
-                    textBox3.Text += " " + nums[i];
+                    textBox3.Text = " " + nums[i];
 
 
                 }
 
-                for (int i = 0; i <= m; i++)
-                {
-                    textBox4.Text += Mylib.MassivCheck(m, nums);
-
-                }
-
+            //for (int i = 0; i <= m; i++)
+            
+                textBox4.Text = Mylib.MassivCheck(m, nums);
+            
+                
+            textBox5.Text = Mylib.kolvo(m,nums).ToString();
             
             
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

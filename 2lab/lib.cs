@@ -117,22 +117,38 @@ namespace lib
         public static string MassivCheck(int m, int[] mas)
         {
             int k = 0;
+            int j = 0;
             int[] mass;
-            mass = new int[111];
+            mass = new int[m];
             string l = "Таких элементов нет";
             for (int i = 0; i < m - 1; i++)
-                if (mas[i] > mas[i + 1]) { mass[i] = mas[i]; if(mass[i] != 0) { return mass[i].ToString(); } } //return mas[i].ToString(); 
-
-            return l;
-
-
-             
+                if (mas[i] > mas[i + 1]) 
+                {
+                    mass[j] =i;
+                    j++;
+                }
             
-           /* Console.WriteLine("------------------------");
-            if (k == 0) { Console.WriteLine("Нет элементов, удовлетворяющих условию => k = 0"); }
-            else { Console.WriteLine("Кол-во элементов удовлетворяющих условию = " + k); }
-           */
+                if (j != 0)
+                {
+                    l = "";
+                for (int i = 0; i < j; i++)
+                    l += mass[i].ToString() + " ";
+                }
+
+                    return l;
+            }
+
+        public static int kolvo(int m, int[] mas)
+        {
+            int k = 0;
+            for (int i = 0; i < m - 1; i++)
+            {
+                if (mas[i] > mas[i + 1]) k++;
+            }
+
+            return k;
         }
+
 
 
 
